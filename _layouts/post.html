@@ -9,10 +9,16 @@ layout: default
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=160457957453385";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
 <div class="post">
-{{ content }}
+	<div class="timestamp">
+		<a href="/"><img src="/images/home.png" width="20"/></a>&nbsp;&nbsp;
+		<span>{{ page.date | date_to_long_string }}</span>
+	</div>
+	<div class="post-title">{{ page.title }}</div>
+
+	<div class="post-content">
+	{{ content }}
+	</div>
+	<h2 class="comment-header">Comments</h2>
+	<div class="fb-comments" data-href="{{ post.url }}" data-numposts="5" data-colorscheme="light" data-width="940"></div>
 </div>
-<div class="fb-comments" data-href="{{ post.url }}" data-numposts="5" data-colorscheme="light" data-width="920"></div>
